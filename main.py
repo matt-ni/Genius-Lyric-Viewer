@@ -1,18 +1,15 @@
-# Libraries and important info.
-# Time for pauses, lyricsgenius - self-explanitory
+#Libraries and important info.
+# Time for pauses, lyricsgenius - self-explanitory, api key, and welcome message.
 import time
 import lyricsgenius as genius
-
-# Client Access key, welcome message and delay.
 api = genius.Genius("b9oy4hrgqBbeeFyjWIpXE6XVp17c1ree-2XAm-ixJLt3_bt3wOf42Lyjlyas3uno")
-print("Welcome to the Lyrics Viewer. Please choose a song.")
+print ("Welcome to the Lyrics Viewer. Please choose a song.")
 time.sleep(2)
-
 
 # Function to repeat song search if needed
 def lyrics_search():
     while True:
-        print("Choose a song.")
+        print ("Choose a song.")
         songnumber = input("""1. Reese LAFLARE - Stutter (feat. Yung Bans), 
 2. G Herbo - Malcolm, 
 3. Kap G - Marvelous Day (feat. Gunna & Lil Uzi Vert)
@@ -22,11 +19,11 @@ def lyrics_search():
         if songnumber == str(1):
             song = api.search_song("Stutter", "Reese LAFLARE")
         elif songnumber == str(2):
-            song = api.search_song("Malcolm", "G Herbo")
+            song = api.search_song("Malcolm", "G_Herbo")
         elif songnumber == str(3):
             song = api.search_song("Marvelous Day", "Kap G")
-        # This option will allow the user to enter their own choice of song.
         elif songnumber == str(4):
+            # This option will allow the user to enter their own choice.
             artist = input("What artist? ")
             time.sleep(2)
             songname = input("What song? ")
@@ -44,24 +41,13 @@ def lyrics_search():
             time.sleep(2)
             continue
             time.sleep(5)
-        # Function called on to prompt user for other song search.
-        another_song()
-
-
-# Function incase answer for "another song" prompt is neither "Yes" or "No".
-def another_song():
-    while True:
         # Program asks user if they want to search again
-        search_prompt = input("Would you like to look for another song? Yes or no? ")
-        if search_prompt == "Yes":
-            lyrics_search()
-        elif search_prompt == "No":
+        another_song = input("Would you like to look for another song? Yes or no? ")
+        if another_song == "Yes":
+            continue
+        elif another_song == "No":
             print("Thank you for using this program!")
             break
-        else:
-            print("Invalid answer. Please try again.")
-            continue
 
-
-# Function called on to activate search
+#Function called on to activate initial search
 lyrics_search()
