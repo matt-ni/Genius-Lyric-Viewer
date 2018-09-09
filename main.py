@@ -1,5 +1,5 @@
 #Libraries and important info.
-# Time for pauses, lyricsgenius - self-explanitory, api key, and welcome message.
+# Time for pauses, lyricsgenius - self-explanitory, client access token, and welcome message.
 import time
 import lyricsgenius as genius
 api = genius.Genius("b9oy4hrgqBbeeFyjWIpXE6XVp17c1ree-2XAm-ixJLt3_bt3wOf42Lyjlyas3uno")
