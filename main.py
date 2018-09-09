@@ -43,7 +43,7 @@ def lyrics_search():
             time.sleep(5)
         another_song()
 
-#Function incase answer for "another song" prompt is not "Yes" or "No".
+#Function incase answer for "another song" prompt is neither "Yes" or "No".
 def another_song():
     while True:
         # Program asks user if they want to search again
