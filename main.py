@@ -3,7 +3,7 @@
 import time
 import lyricsgenius as genius
 
-#Client Access key, welcome message and delay.
+# Client Access key, welcome message and delay.
 api = genius.Genius("b9oy4hrgqBbeeFyjWIpXE6XVp17c1ree-2XAm-ixJLt3_bt3wOf42Lyjlyas3uno")
 print("Welcome to the Lyrics Viewer. Please choose a song.")
 time.sleep(2)
@@ -25,8 +25,8 @@ def lyrics_search():
             song = api.search_song("Malcolm", "G Herbo")
         elif songnumber == str(3):
             song = api.search_song("Marvelous Day", "Kap G")
+        # This option will allow the user to enter their own choice of song.
         elif songnumber == str(4):
-            # This option will allow the user to enter their own choice.
             artist = input("What artist? ")
             time.sleep(2)
             songname = input("What song? ")
@@ -52,10 +52,10 @@ def lyrics_search():
 def another_song():
     while True:
         # Program asks user if they want to search again
-        another_song = input("Would you like to look for another song? Yes or no? ")
-        if another_song == "Yes":
+        search_prompt = input("Would you like to look for another song? Yes or no? ")
+        if search_prompt == "Yes":
             lyrics_search()
-        elif another_song == "No":
+        elif search_prompt == "No":
             print("Thank you for using this program!")
             break
         else:
