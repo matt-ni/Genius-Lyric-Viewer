@@ -1,5 +1,5 @@
 #Libraries and important info.
-# Time for pauses, lyricsgenius - self-explanitory, client access token, and welcome message.
+# Time for pauses, lyricsgenius - self-explanitory, api key, and welcome message.
 import time
 import lyricsgenius as genius
 api = genius.Genius("b9oy4hrgqBbeeFyjWIpXE6XVp17c1ree-2XAm-ixJLt3_bt3wOf42Lyjlyas3uno")
@@ -19,7 +19,7 @@ def lyrics_search():
         if songnumber == str(1):
             song = api.search_song("Stutter", "Reese LAFLARE")
         elif songnumber == str(2):
-            song = api.search_song("Malcolm", "G_Herbo")
+            song = api.search_song("Malcolm", "G Herbo")
         elif songnumber == str(3):
             song = api.search_song("Marvelous Day", "Kap G")
         elif songnumber == str(4):
@@ -41,13 +41,21 @@ def lyrics_search():
             time.sleep(2)
             continue
             time.sleep(5)
+        another_song()
+
+#Function incase answer for "another song" prompt is not "Yes" or "No".
+def another_song():
+    while True:
         # Program asks user if they want to search again
         another_song = input("Would you like to look for another song? Yes or no? ")
         if another_song == "Yes":
-            continue
+            lyrics_search()
         elif another_song == "No":
             print("Thank you for using this program!")
             break
+        else:
+            print("Invalid answer. Please try again.")
+            continue
 
 #Function called on to activate search
 lyrics_search()
