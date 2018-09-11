@@ -1,15 +1,28 @@
-#Libraries and important info.
+# Libraries and important info.
 # Time for pauses, lyricsgenius - self-explanitory, api key, and welcome message.
 import time
 import lyricsgenius as genius
+
 api = genius.Genius("b9oy4hrgqBbeeFyjWIpXE6XVp17c1ree-2XAm-ixJLt3_bt3wOf42Lyjlyas3uno")
-print ("Welcome to the Lyrics Viewer. Please choose a song.")
+print("Welcome to the Lyrics Viewer. Please choose a song.")
 time.sleep(2)
+
+
+def prompt():
+    while True:
+        # Program asks user if they want to search again
+        another_song = input("Would you like to look for another song? Yes or no? ")
+        if another_song == "Yes":
+            continue
+        elif another_song == "No":
+            print("Thank you for using this program!")
+            exit()
+
 
 # Function to repeat song search if needed
 def lyrics_search():
     while True:
-        print ("Choose a song.")
+        print("Choose a song.")
         songnumber = input("""1. Reese LAFLARE - Stutter (feat. Yung Bans), 
 2. G Herbo - Malcolm, 
 3. Kap G - Marvelous Day (feat. Gunna & Lil Uzi Vert)
@@ -40,14 +53,9 @@ def lyrics_search():
             print("Sorry! That song is not the first result. Try again.")
             time.sleep(2)
             continue
-            time.sleep(5)
-        # Program asks user if they want to search again
-        another_song = input("Would you like to look for another song? Yes or no? ")
-        if another_song == "Yes":
-            continue
-        elif another_song == "No":
-            print("Thank you for using this program!")
-            break
+        time.sleep(5)
+        prompt()
 
-#Function called on to activate initial search
+
+# Function called on to activate initial search
 lyrics_search()
